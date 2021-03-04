@@ -47,8 +47,8 @@ Balls = 0
 Strikes = 0
 // stops ball counter from reaching a value higher than 4
 Balls = Math.constrain(Balls, 0, 4)
+// stops strike counter from reaching a value higher than 3
 Strikes = Math.constrain(Strikes, 0, 3)
-// Shows an X if Strike counter hits 3
 basic.forever(function () {
     // If strike counter is equal to 3. an S and an X are displayed to symbolize that 3 strikes have occurred and the game is over
     if (Strikes == 3) {
@@ -64,7 +64,7 @@ basic.forever(function () {
 })
 // If ball counter is equal to 4. a B and an X are displayed to symbolize that 4 balls have been pitched and the game is over
 basic.forever(function () {
-    if (Balls >= 4) {
+    if (Balls == 4) {
         basic.showString("B")
         basic.showLeds(`
             # . . . #
